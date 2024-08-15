@@ -1,6 +1,6 @@
 /* Estilo Global */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,8 +8,18 @@ body {
     color: #e0e0e0; /* Cor clara para o texto */
 }
 
+/* Tipografia */
+h1, h2 {
+    font-family: 'Georgia', serif; /* Fonte serifada para títulos */
+}
+
+p {
+    font-family: 'Arial', sans-serif; /* Fonte sans-serif para o corpo */
+}
+
+/* Cabeçalho */
 header {
-    background-color: #000024; /* Cor de fundo atualizada para o cabeçalho */
+    background-color: #000024; /* Cor de fundo para o cabeçalho */
     color: #ffffff;
     padding: 20px;
     display: flex;
@@ -18,6 +28,7 @@ header {
     position: relative; /* Permite posicionamento absoluto para o botão de minimizar */
 }
 
+/* Logo */
 .logo-container {
     display: flex;
     align-items: center;
@@ -28,12 +39,14 @@ header {
     box-sizing: border-box; /* Inclui padding no tamanho total */
 }
 
+/* Estilo da Logo */
 .logo {
-    height: 100px; /* Aumenta a altura do logo */
+    height: 80px; /* Altura do logo ajustada */
     width: auto;
     margin: 0; /* Remove a margem para garantir que o logo esteja alinhado corretamente */
 }
 
+/* Navegação */
 nav {
     background-color: #1a1c1f; /* Cor mais escura para a barra de navegação */
     padding: 10px 0;
@@ -59,11 +72,29 @@ nav ul li a {
     color: #e0e0e0; /* Cor clara para os links */
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease; /* Adiciona uma transição suave na cor ao passar o mouse */
+    position: relative;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Transição suave para a cor e a borda ao passar o mouse */
+    padding: 5px 0; /* Adiciona padding vertical */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #f39c12;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
     color: #f39c12; /* Cor de destaque ao passar o mouse */
+    border-bottom: 2px solid #f39c12; /* Adiciona uma borda inferior para mais destaque */
 }
 
 .header-content {
@@ -85,6 +116,7 @@ header p {
     margin: 10px 0 0; /* Ajusta a margem para separação do título */
 }
 
+/* Main Content */
 main {
     padding: 20px;
 }
@@ -94,14 +126,20 @@ h2 {
     color: #e0e0e0; /* Cor clara para subtítulos */
 }
 
+/* Rodapé */
 footer {
     background-color: #1a1c1f; /* Cor escura para o rodapé */
     color: #e0e0e0; /* Cor clara para o texto do rodapé */
     text-align: center;
-    padding: 10px;
+    padding: 15px; /* Aumenta o padding para um visual mais espaçoso */
     position: fixed;
     width: 100%;
     bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Sombra para o rodapé */
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Estilo do Popup */
@@ -118,6 +156,11 @@ footer {
     display: flex;
     flex-direction: column;
     z-index: 1000; /* Garante que o popup fique acima de outros elementos */
+    transition: transform 0.3s ease; /* Adiciona transição suave para o popup */
+}
+
+#chatbot-popup:hover {
+    transform: scale(1.02); /* Efeito de zoom suave no hover */
 }
 
 #chatbot-popup iframe {
@@ -127,9 +170,10 @@ footer {
     border-radius: 10px 10px 0 0;
 }
 
+/* Botão de Minimizar do Chatbot */
 #minimize-chatbot {
-    background: #282c36; /* Cor escura para o botão de minimizar */
-    color: #ffffff; /* Cor clara para o texto do botão */
+    background: #f39c12; /* Amarelo dourado para o fundo do botão de minimizar */
+    color: #000024; /* Azul escuro para o texto do botão */
     border: none;
     border-radius: 10px 10px 0 0; /* Arredondamento superior do botão */
     padding: 5px;
@@ -142,29 +186,35 @@ footer {
     width: 100%;
     height: 40px; /* Altura mais fina para o botão */
     box-sizing: border-box; /* Inclui o padding no tamanho total */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para cor e transformação */
+}
+
+#minimize-chatbot:hover {
+    background-color: #e67e22; /* Tom mais escuro de laranja para hover */
+    transform: scale(1.05); /* Efeito de zoom suave no hover */
 }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column; /* Empilha logo e navegação verticalmente em telas pequenas */
-        align-items: flex-start; /* Alinha itens à esquerda */
+        align-items: center; /* Centraliza itens horizontalmente */
         padding: 10px;
     }
 
     .logo {
-        height: 80px; /* Reduz a altura do logo em telas menores */
+        height: 70px; /* Reduz a altura do logo em telas menores */
     }
 
     nav {
         padding: 10px 0;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     nav ul li {
@@ -177,7 +227,7 @@ footer {
 
     .header-content {
         margin-top: 10px;
-        padding: 0;
+        padding: 0 10px;
     }
 
     header h1 {
