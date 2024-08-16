@@ -159,7 +159,7 @@ footer p {
     flex-direction: column;
     z-index: 1000; /* Garante que o popup fique acima de outros elementos */
     transition: transform 0.3s ease; /* Adiciona transição suave para o popup */
-    overflow: hidden;
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do popup */
 }
 
 #chatbot-popup:hover {
@@ -168,7 +168,7 @@ footer p {
 
 #chatbot-popup iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Ajusta a altura do iframe */
+    height: calc(100% - 40px); /* Ajusta a altura do iframe para considerar o botão de minimizar */
     border: none;
     border-radius: 10px 10px 0 0;
 }
@@ -246,15 +246,10 @@ footer p {
     }
 
     #chatbot-popup {
-        width: 80%; /* Aumenta a largura em telas menores */
-        height: 70vh; /* Aumenta a altura em telas menores */
+        width: 80%;
+        height: 70vh;
         bottom: 10px;
         right: 10px;
-    }
-
-    #minimize-chatbot {
-        height: 35px;
-        font-size: 16px;
     }
 
     #chatbot-popup iframe {
@@ -284,11 +279,6 @@ footer p {
         height: 60vh;
         bottom: 5px;
         right: 5px;
-    }
-
-    #minimize-chatbot {
-        height: 30px;
-        font-size: 14px;
     }
 
     #chatbot-popup iframe {
