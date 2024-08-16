@@ -6,6 +6,7 @@ body {
     box-sizing: border-box;
     background-color: #121212; /* Fundo escuro para o corpo */
     color: #e0e0e0; /* Cor clara para o texto */
+    line-height: 1.6; /* Melhora a legibilidade */
 }
 
 /* Tipografia */
@@ -136,6 +137,7 @@ footer {
     width: 100%;
     bottom: 0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Sombra para o rodapé */
+    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
 }
 
 footer p {
@@ -157,6 +159,7 @@ footer p {
     flex-direction: column;
     z-index: 1000; /* Garante que o popup fique acima de outros elementos */
     transition: transform 0.3s ease; /* Adiciona transição suave para o popup */
+    overflow: hidden; /* Garante que o conteúdo do chatbot não extravase o contêiner */
 }
 
 #chatbot-popup:hover {
@@ -277,8 +280,8 @@ footer p {
     }
 
     #chatbot-popup {
-        width: 90%; /* Aumenta a largura em telas muito pequenas */
-        height: 80vh; /* Aumenta a altura em telas muito pequenas */
+        width: 90%;
+        height: 60vh;
         bottom: 5px;
         right: 5px;
     }
@@ -289,6 +292,6 @@ footer p {
     }
 
     #chatbot-popup iframe {
-        height: calc(100% - 30px); /* Ajusta a altura do iframe */
+        height: calc(100% - 30px); /* Ajusta a altura do iframe para dispositivos muito pequenos */
     }
 }
