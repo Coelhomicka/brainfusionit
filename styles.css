@@ -159,7 +159,7 @@ footer p {
     flex-direction: column;
     z-index: 1000; /* Garante que o popup fique acima de outros elementos */
     transition: transform 0.3s ease; /* Adiciona transição suave para o popup */
-    overflow: hidden; /* Garante que o conteúdo do chatbot não extravase o contêiner */
+    overflow: hidden;
 }
 
 #chatbot-popup:hover {
