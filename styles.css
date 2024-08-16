@@ -1,59 +1,84 @@
+/* Definindo as variáveis de cor */
+:root {
+    --background-color-light: #ffffff;
+    --background-color-dark: #121212;
+    --header-background-light: #f8f9fa;
+    --header-background-dark: #1a1c1f;
+    --content-background-light: #f0f0f0;
+    --content-background-dark: #282c36;
+    --text-color-light: #000000;
+    --text-color-dark: #e0e0e0;
+    --highlight-color: #f39c12;
+}
+
 /* Estilo Global */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #121212; /* Fundo escuro para o corpo */
-    color: #e0e0e0; /* Cor clara para o texto */
-    line-height: 1.6; /* Melhora a legibilidade */
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Tipografia */
-h1, h2 {
-    font-family: 'Georgia', serif; /* Fonte serifada para títulos */
+body.light-mode {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
 }
 
-p {
-    font-family: 'Arial', sans-serif; /* Fonte sans-serif para o corpo */
+body.light-mode header {
+    background-color: var(--header-background-light);
+}
+
+body.light-mode .header-content {
+    background-color: var(--content-background-light);
+}
+
+body.dark-mode header {
+    background-color: var(--header-background-dark);
+}
+
+body.dark-mode .header-content {
+    background-color: var(--content-background-dark);
 }
 
 /* Cabeçalho */
 header {
-    background-color: #000024; /* Cor de fundo para o cabeçalho */
-    color: #ffffff;
+    color: var(--text-color-dark);
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Alinha logo e conteúdo em coluna */
-    align-items: center; /* Centraliza itens horizontalmente */
-    position: relative; /* Permite posicionamento absoluto para o botão de minimizar */
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 /* Logo */
 .logo-container {
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Impede que o logo encolha */
-    background-color: #000024; /* Mantém a mesma cor de fundo para a área do logo */
-    padding: 10px 0; /* Adiciona espaçamento ao redor do logo */
-    width: 100%; /* Garante que o contêiner do logo ocupe toda a largura */
-    box-sizing: border-box; /* Inclui padding no tamanho total */
+    flex-shrink: 0;
+    background-color: inherit;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Estilo da Logo */
 .logo {
-    height: 80px; /* Altura do logo ajustada */
+    height: 80px;
     width: auto;
-    margin: 0; /* Remove a margem para garantir que o logo esteja alinhado corretamente */
+    margin: 0;
 }
 
 /* Navegação */
 nav {
-    background-color: #1a1c1f; /* Cor mais escura para a barra de navegação */
+    background-color: #1a1c1f;
     padding: 10px 0;
-    width: 100%; /* Garante que o menu ocupe toda a largura */
+    width: 100%;
     display: flex;
-    justify-content: center; /* Centraliza os itens do menu */
+    justify-content: center;
 }
 
 nav ul {
@@ -62,7 +87,7 @@ nav ul {
     margin: 0;
     text-align: center;
     display: flex;
-    gap: 15px; /* Espaço entre os itens do menu */
+    gap: 15px;
 }
 
 nav ul li {
@@ -70,12 +95,12 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #e0e0e0; /* Cor clara para os links */
+    color: var(--text-color-dark);
     text-decoration: none;
     font-weight: bold;
     position: relative;
-    transition: color 0.3s ease, border-bottom 0.3s ease; /* Transição suave para a cor e a borda ao passar o mouse */
-    padding: 5px 0; /* Adiciona padding vertical */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding: 5px 0;
 }
 
 nav ul li a::after {
@@ -85,7 +110,7 @@ nav ul li a::after {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #f39c12;
+    background: var(--highlight-color);
     transition: width 0.3s ease;
 }
 
@@ -94,54 +119,71 @@ nav ul li a:hover::after {
 }
 
 nav ul li a:hover {
-    color: #f39c12; /* Cor de destaque ao passar o mouse */
-    border-bottom: 2px solid #f39c12; /* Adiciona uma borda inferior para mais destaque */
+    color: var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color);
 }
 
 .header-content {
+    background-color: var(--content-background-dark);
     margin-top: 20px;
     text-align: center;
-    max-width: 800px; /* Define um limite de largura para o texto */
-    padding: 0 20px; /* Adiciona espaçamento lateral */
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #ffffff; /* Cor clara para o título principal */
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2em; /* Ajusta o tamanho do texto */
-    color: #e0e0e0; /* Cor clara para o texto */
-    margin: 10px 0 0; /* Ajusta a margem para separação do título */
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 /* Main Content */
 main {
     padding: 20px;
+    padding-bottom: 80px;
 }
 
 h2 {
     font-size: 2em;
-    color: #e0e0e0; /* Cor clara para subtítulos */
+    color: var(--text-color-dark);
 }
 
 /* Rodapé */
 footer {
-    background-color: #1a1c1f; /* Cor escura para o rodapé */
-    color: #e0e0e0; /* Cor clara para o texto do rodapé */
+    background-color: #1a1c1f;
+    color: var(--text-color-dark);
     text-align: center;
-    padding: 15px; /* Aumenta o padding para um visual mais espaçoso */
+    padding: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Sombra para o rodapé */
-    z-index: 1000; /* Garante que o rodapé fique acima de outros elementos */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
 }
 
 footer p {
     margin: 0;
+}
+
+/* Estilo dos Botões de Redes Sociais */
+.social-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-buttons a {
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.social-buttons img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.social-buttons .linkedin-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.social-buttons img:hover {
+    transform: scale(1.1);
 }
 
 /* Estilo do Popup */
@@ -151,34 +193,34 @@ footer p {
     right: 20px;
     width: 300px;
     height: 400px;
-    background-color: #1c1e22; /* Fundo escuro para o popup */
-    border: 2px solid #282c36; /* Borda escura */
+    background-color: #1c1e22;
+    border: 2px solid #282c36;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra mais intensa */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
-    z-index: 1000; /* Garante que o popup fique acima de outros elementos */
-    transition: transform 0.3s ease; /* Adiciona transição suave para o popup */
-    overflow: hidden; /* Garante que o conteúdo não ultrapasse os limites do popup */
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 #chatbot-popup:hover {
-    transform: scale(1.02); /* Efeito de zoom suave no hover */
+    transform: scale(1.02);
 }
 
 #chatbot-popup iframe {
     width: 100%;
-    height: calc(100% - 40px); /* Ajusta a altura do iframe para considerar o botão de minimizar */
+    height: calc(100% - 40px);
     border: none;
     border-radius: 10px 10px 0 0;
 }
 
 /* Botão de Minimizar do Chatbot */
 #minimize-chatbot {
-    background: #f39c12; /* Amarelo dourado para o fundo do botão de minimizar */
-    color: #000024; /* Azul escuro para o texto do botão */
+    background: var(--highlight-color);
+    color: #000024;
     border: none;
-    border-radius: 10px 10px 0 0; /* Arredondamento superior do botão */
+    border-radius: 10px 10px 0 0;
     padding: 5px;
     cursor: pointer;
     font-size: 18px;
@@ -187,26 +229,26 @@ footer p {
     top: 0;
     right: 0;
     width: 100%;
-    height: 40px; /* Altura mais fina para o botão */
-    box-sizing: border-box; /* Inclui o padding no tamanho total */
-    transition: background-color 0.3s, transform 0.3s; /* Transição suave para cor e transformação */
+    height: 40px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #minimize-chatbot:hover {
-    background-color: #e67e22; /* Tom mais escuro de laranja para hover */
-    transform: scale(1.05); /* Efeito de zoom suave no hover */
+    background-color: #e67e22;
+    transform: scale(1.05);
 }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* Empilha logo e navegação verticalmente em telas pequenas */
-        align-items: center; /* Centraliza itens horizontalmente */
+        flex-direction: column;
+        align-items: center;
         padding: 10px;
     }
 
     .logo {
-        height: 70px; /* Reduz a altura do logo em telas menores */
+        height: 70px;
     }
 
     nav {
@@ -253,7 +295,7 @@ footer p {
     }
 
     #chatbot-popup iframe {
-        height: calc(100% - 35px); /* Ajusta a altura do iframe */
+        height: calc(100% - 35px);
     }
 }
 
@@ -263,7 +305,7 @@ footer p {
     }
 
     .logo {
-        height: 60px; /* Reduz a altura do logo em telas muito pequenas */
+        height: 60px;
     }
 
     header h1 {
@@ -282,6 +324,6 @@ footer p {
     }
 
     #chatbot-popup iframe {
-        height: calc(100% - 30px); /* Ajusta a altura do iframe para dispositivos muito pequenos */
+        height: calc(100% - 30px);
     }
 }
