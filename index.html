@@ -3,220 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainFusion IT</title>
-    <meta name="description" content="BrainFusion IT é uma empresa na vanguarda da Inteligência Artificial, oferecendo soluções inovadoras e design sofisticado para impulsionar a eficiência e inovação nos negócios.">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="BrainFusion IT">
-    <meta property="og:description" content="Avançando na vanguarda da Inteligência Artificial com soluções inovadoras e design sofisticado.">
-    <meta property="og:image" content="https://www.brainfusion.com.br/logo.jfif">
-    <meta property="og:url" content="https://www.brainfusion.com.br">
-    <meta property="og:type" content="website">
-    <link rel="canonical" href="https://www.brainfusion.com.br">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icone.png" type="image/png">
+    <title>Site em Construção</title>
     <style>
-        /* Estilos gerais do layout */
-        section {
-            margin: 40px 0;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #1a1c1f;
-        }
-
-        section h2 {
-            font-size: 2em;
-            color: #f39c12; /* Cor de destaque para títulos de seção */
-            border-bottom: 2px solid #f39c12; /* Linha de destaque abaixo dos títulos */
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-
-        .service, .team-member {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            background-color: #282c36; /* Fundo mais claro para cada item */
-        }
-
-        .service h3, .team-member h3 {
-            color: #f39c12;
-            margin-top: 0;
-            font-size: 1.5em;
-        }
-
-        .team-member {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .team-member p {
-            margin-top: 5px;
-        }
-
-        .contact-info {
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-
-        .contact-info ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .contact-info li {
-            margin: 10px 0;
-        }
-
-        /* Botão de alternância de tema */
-        .theme-toggle {
-            cursor: pointer;
-            padding: 10px;
-            border: none;
-            background-color: #f39c12;
-            color: white;
-            border-radius: 5px;
-            font-size: 1em;
-            margin: 10px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-        
-        /* Tema claro */
-        .light-mode {
-            --background-color: #ffffff;
-            --text-color: #000000;
-            --section-background: #f0f0f0;
-            --service-background: #e0e0e0;
-        }
-
-        /* Tema escuro */
-        .dark-mode {
-            --background-color: #121212;
-            --text-color: #e0e0e0;
-            --section-background: #1a1c1f;
-            --service-background: #282c36;
-        }
-
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
         }
 
-        section {
-            background-color: var(--section-background);
+        .container {
+            text-align: center;
         }
 
-        .service, .team-member {
-            background-color: var(--service-background);
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #dfe6e9;
+        }
+
+        .construction-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: #f8f9fa;
+        }
+
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #2c5364;
+            border-right: 8px solid #0f2027;
+            border-bottom: 8px solid #203a43;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9em;
+            color: #bdc3c7;
         }
     </style>
 </head>
-<body class="dark-mode">
-    <header>
-        <div class="logo-container">
-            <img src="logo.jfif" alt="Logo da BrainFusion IT" class="logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="#team">Equipe</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="chatbot.html">Chatbot</a></li>
-            </ul>
-        </nav>
-        <div class="header-content">
-            <h1>Bem-vindo à BrainFusion IT</h1>
-            <p>Avançando na vanguarda da Inteligência Artificial com soluções inovadoras e design sofisticado.</p>
-        </div>
-        <button class="theme-toggle" id="theme-toggle">Modo Claro</button>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Sobre a BrainFusion IT</h2>
-            <p>A BrainFusion IT se destaca na criação de soluções de ponta em Inteligência Artificial. Nosso compromisso é oferecer tecnologias de vanguarda que impulsionam a eficiência e a inovação nos negócios. Explore nossos serviços e descubra como podemos transformar seus desafios tecnológicos em oportunidades de crescimento.</p>
-        </section>
-        
-        <section id="services">
-            <h2>Serviços</h2>
-            <div class="service">
-                <h3>Consultoria em Inteligência Artificial</h3>
-                <p>Oferecemos consultoria especializada para implementar soluções de IA que atendam às suas necessidades específicas.</p>
-            </div>
-            <div class="service">
-                <h3>Desenvolvimento de IA Personalizado</h3>
-                <p>Criamos soluções de IA sob medida para maximizar a eficiência e resolver problemas complexos específicos do seu negócio.</p>
-            </div>
-            <div class="service">
-                <h3>Design e Experiência do Usuário</h3>
-                <p>Desenvolvemos interfaces intuitivas e experiências de usuário que impressionam e encantam.</p>
-            </div>
-        </section>
-        
-        <section id="team">
-            <h2>Equipe</h2>
-            <div class="team-member">
-                <h3>Bruna Caruzo</h3>
-                <p>Diretora Comercial - Especialista em negócios.</p>
-            </div>
-            <div class="team-member">
-                <h3>Mickael Coelho</h3>
-                <p>Diretor de Tecnologia - Engenheiro de IA.</p>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contato</h2>
-            <div class="contact-info">
-                <p>Entre em contato conosco para saber mais sobre nossos serviços ou para agendar uma consulta.</p>
-                <ul>
-                    <li>Email: <a href="mailto:contato@brainfusion.com.br">contato@brainfusion.com.br</a></li>
-                </ul>
-                <div class="social-buttons">
-                    <a href="https://www.linkedin.com/company/brainfusion-it" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn" class="linkedin-icon">
-                    </a>
-                    <a href="https://www.instagram.com/brainfusioniit" target="_blank">
-                        <img src="instagram.png" alt="Instagram">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 BrainFusion IT. Todos os direitos reservados.</p>
-    </footer>
-    
-    <!-- Chatbot Popup -->
-    <div id="chatbot-popup">
-        <button id="minimize-chatbot">_</button>
-        <iframe src="https://copilotstudio.microsoft.com/environments/Default-a20f73dc-03ca-4715-9e1b-5db5caa2b544/bots/Default_brainIt/webchat?__version__=2" frameborder="0" aria-label="Chatbot"></iframe>
+<body>
+    <div class="container">
+        <div class="construction-icon">🚧</div>
+        <h1>SITE EM CONSTRUÇÃO</h1>
+        <p>Estamos trabalhando duro para lançar o nosso site. Fique atento!</p>
+        <div class="loader"></div>
     </div>
-
-    <script src="scripts.js"></script>
-    <script>
-        // JavaScript para alternar entre os temas
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        themeToggle.addEventListener('click', () => {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-                themeToggle.textContent = 'Modo Escuro';
-            } else {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-                themeToggle.textContent = 'Modo Claro';
-            }
-        });
-    </script>
+    <footer>&copy; 2024 Seu Nome ou Empresa. Todos os direitos reservados.</footer>
 </body>
 </html>
